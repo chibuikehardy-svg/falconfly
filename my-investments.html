@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Investments - Falcon Fly Capital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #001a33 0%, #003366 100%); }
+        .card-blue { background-color: #002b4e; }
+        .sidebar-dark { background-color: #001529; }
+        .active-link { background-color: #16a34a; color: white; }
+        .progress-bar-container { background-color: rgba(255,255,255,0.1); }
+    </style>
+</head>
+<script>
+  if (localStorage.getItem("isLoggedIn") !== "true") {
+    window.location.href = "login.html";
+  }
+</script>
+
+<body class="bg-slate-100">
+
+    <div class="min-h-screen flex flex-col md:flex-row">
+        
+        <!-- Sidebar (Maintained as requested) -->
+        <aside class="sidebar-dark w-full md:w-64 text-white flex-shrink-0">
+            <div class="p-6">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2 mb-10">
+                    <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold leading-none">FALCON FLY</h1>
+                        <p class="text-[10px] font-semibold tracking-widest text-blue-400">CAPITAL</p>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="space-y-2 text-sm">
+                    <a href="user-dash.html" class="flex items-center space-x-3 p-3 rounded hover:bg-white/10 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="make-deposit.html" class="flex items-center space-x-3 p-3 rounded hover:bg-white/10 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                        <span>Make Deposit</span>
+                    </a>
+                    <a href="withdrawal.html" class="flex items-center space-x-3 p-3 rounded hover:bg-white/10 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        <span>Withdraw Funds</span>
+                    </a>
+                    <a href="my-investments.html" class="flex items-center space-x-3 p-3 rounded active-link transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                        <span>My Investments</span>
+                    </a>
+                    <a href="transactions.html" class="flex items-center space-x-3 p-3 rounded hover:bg-white/10 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span>Transactions</span>
+                    </a>
+                    <a href="referral.html" class="flex items-center space-x-3 p-3 rounded hover:bg-white/10 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        <span>Referral Program</span>
+                    </a>
+                    <hr class="border-white/10 my-4">
+                    <a href="#" class="flex items-center space-x-3 p-3 rounded hover:bg-red-600/20 text-red-400 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                        <span onclick="logout()">Logout</span>
+                    </a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col">
+            
+            <!-- Top Header -->
+            <header class="bg-white border-b border-gray-200 p-4 flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <span class="text-gray-400 md:hidden">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </span>
+                    <h2 class="text-slate-800 font-semibold uppercase tracking-wider text-sm">My Investments</h2>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="text-right hidden sm:block">
+                        <p class="text-xs font-bold text-slate-800 leading-none">John Doe</p>
+                        <p class="text-[10px] text-green-600 font-bold uppercase">Verified Member</p>
+                    </div>
+                    <div class="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center border-2 border-green-500">
+                        <span class="text-slate-600 font-bold">JD</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="p-4 md:p-8 space-y-6">
+                
+                <!-- Summary Stats -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="bg-white p-5 rounded border border-gray-200 shadow-sm">
+                        <p class="text-[10px] uppercase font-bold text-gray-500 mb-1 tracking-widest">Total Invested</p>
+                        <h4 class="text-2xl font-bold text-slate-800">$5,000.00</h4>
+                    </div>
+                    <div class="bg-white p-5 rounded border border-gray-200 shadow-sm">
+                        <p class="text-[10px] uppercase font-bold text-gray-500 mb-1 tracking-widest">Active ROI</p>
+                        <h4 class="text-2xl font-bold text-green-600">+$140.20</h4>
+                    </div>
+                    <div class="bg-white p-5 rounded border border-gray-200 shadow-sm">
+                        <p class="text-[10px] uppercase font-bold text-gray-500 mb-1 tracking-widest">Total Plans</p>
+                        <h4 class="text-2xl font-bold text-blue-600">02</h4>
+                    </div>
+                </div>
+
+                <!-- Active Plans Section -->
+                <h3 class="font-bold text-slate-800 text-sm uppercase tracking-wider mb-2">Current Active Plans</h3>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    
+                    <!-- Plan Card 1 -->
+                    <div class="card-blue rounded-lg p-6 text-white shadow-lg relative overflow-hidden">
+                        <div class="relative z-10">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <span class="bg-green-600 text-[9px] font-bold px-2 py-1 rounded uppercase">Running</span>
+                                    <h3 class="text-xl font-bold mt-2">OPTIMAL PLAN</h3>
+                                    <p class="text-blue-200 text-xs">Forex & Arbitrage Market</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-2xl font-bold">$3,000.00</p>
+                                    <p class="text-[10px] text-blue-300 uppercase font-bold">Capital Invested</p>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex justify-between text-xs mb-1">
+                                        <span>Progress (72%)</span>
+                                        <span>Expected: $4,200.00</span>
+                                    </div>
+                                    <div class="w-full bg-white/10 rounded-full h-2">
+                                        <div class="bg-green-500 h-2 rounded-full" style="width: 72%"></div>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-3 gap-2 pt-2 border-t border-white/10">
+                                    <div class="text-center">
+                                        <p class="text-[10px] text-blue-300 uppercase">Daily Profit</p>
+                                        <p class="text-xs font-bold">2.5%</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <p class="text-[10px] text-blue-300 uppercase">Next Payout</p>
+                                        <p class="text-xs font-bold">14h 20m</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <p class="text-[10px] text-blue-300 uppercase">Duration</p>
+                                        <p class="text-xs font-bold">10 Days</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Plan Card 2 -->
+                    <div class="card-blue rounded-lg p-6 text-white shadow-lg relative overflow-hidden">
+                        <div class="relative z-10">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <span class="bg-blue-500 text-[9px] font-bold px-2 py-1 rounded uppercase">Running</span>
+                                    <h3 class="text-xl font-bold mt-2">ELITE PLAN</h3>
+                                    <p class="text-blue-200 text-xs">Crypto Mining Operations</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-2xl font-bold">$2,000.00</p>
+                                    <p class="text-[10px] text-blue-300 uppercase font-bold">Capital Invested</p>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex justify-between text-xs mb-1">
+                                        <span>Progress (15%)</span>
+                                        <span>Expected: $3,500.00</span>
+                                    </div>
+                                    <div class="w-full bg-white/10 rounded-full h-2">
+                                        <div class="bg-blue-400 h-2 rounded-full" style="width: 15%"></div>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-3 gap-2 pt-2 border-t border-white/10">
+                                    <div class="text-center">
+                                        <p class="text-[10px] text-blue-300 uppercase">Daily Profit</p>
+                                        <p class="text-xs font-bold">4.0%</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <p class="text-[10px] text-blue-300 uppercase">Next Payout</p>
+                                        <p class="text-xs font-bold">21h 05m</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <p class="text-[10px] text-blue-300 uppercase">Duration</p>
+                                        <p class="text-xs font-bold">30 Days</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Investment History Table -->
+                <div class="bg-white rounded border border-gray-200 shadow-sm overflow-hidden">
+                    <div class="p-4 border-b border-gray-100 flex justify-between items-center">
+                        <h3 class="font-bold text-slate-800 text-sm uppercase tracking-wider">Investment History</h3>
+                        <button class="text-blue-600 text-xs font-bold hover:underline">Download Report</button>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs">
+                            <thead class="bg-slate-50 text-gray-500 uppercase font-bold">
+                                <tr>
+                                    <th class="p-4">Investment ID</th>
+                                    <th class="p-4">Plan Name</th>
+                                    <th class="p-4">Amount</th>
+                                    <th class="p-4">Total Return</th>
+                                    <th class="p-4">Start Date</th>
+                                    <th class="p-4">End Date</th>
+                                    <th class="p-4">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-100">
+                                <tr>
+                                    <td class="p-4 font-mono text-gray-400">#FF-8821</td>
+                                    <td class="p-4 font-semibold text-slate-700">Starter Plan</td>
+                                    <td class="p-4 font-bold">$500.00</td>
+                                    <td class="p-4 font-bold text-green-600">$750.00</td>
+                                    <td class="p-4 text-gray-500">Aug 12, 2024</td>
+                                    <td class="p-4 text-gray-500">Aug 22, 2024</td>
+                                    <td class="p-4"><span class="bg-gray-100 text-gray-600 px-2 py-1 rounded text-[9px] font-bold uppercase">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 font-mono text-gray-400">#FF-7412</td>
+                                    <td class="p-4 font-semibold text-slate-700">Optimal Plan</td>
+                                    <td class="p-4 font-bold">$1,000.00</td>
+                                    <td class="p-4 font-bold text-green-600">$1,400.00</td>
+                                    <td class="p-4 text-gray-500">Jul 01, 2024</td>
+                                    <td class="p-4 text-gray-500">Jul 11, 2024</td>
+                                    <td class="p-4"><span class="bg-gray-100 text-gray-600 px-2 py-1 rounded text-[9px] font-bold uppercase">Completed</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="bg-blue-50 border border-blue-100 rounded-lg p-6 flex flex-col md:flex-row justify-between items-center">
+                    <div>
+                        <h4 class="text-slate-800 font-bold">Want to maximize your earnings?</h4>
+                        <p class="text-slate-600 text-sm">Explore our new high-yield "Falcon Elite" plans with up to 5% daily returns.</p>
+                    </div>
+                    <button class="mt-4 md:mt-0 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded font-bold text-sm uppercase transition shadow-lg">
+                        Invest Now
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Footer (Maintained as requested) -->
+            <footer class="mt-auto bg-[#001529] p-4 text-center">
+                <p class="text-[10px] text-blue-400 uppercase tracking-widest font-bold">
+                    &copy; 2024 Falcon Fly Capital LTD. Security Status: <span class="text-green-500">SSL Encrypted / DDoS Protected</span>
+                </p>
+            </footer>
+
+        </main>
+    </div>
+
+    <script>
+         function logout() {
+            localStorage.removeItem("isLoggedIn");
+            window.location.href = "login.html";
+          }
+          
+                  function logout() {
+    localStorage.removeItem("isLoggedIn");
+    window.location.href = "login.html";
+  }
+    </script>
+</body>
+</html>

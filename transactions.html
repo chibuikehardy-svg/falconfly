@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions - Falcon Fly Capital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #001a33 0%, #003366 100%); }
+        .card-blue { background-color: #002b4e; }
+        .sidebar-dark { background-color: #001529; }
+        .active-link { background-color: #16a34a; color: white; }
+    </style>
+</head>
+
+<script>
+  if (localStorage.getItem("isLoggedIn") !== "true") {
+    window.location.href = "login.html";
+  }
+</script>
+
+<body class="bg-slate-100">
+
+    <div class="min-h-screen flex flex-col md:flex-row">
+        
+        <!-- Sidebar (Maintained as requested) -->
+        <aside class="sidebar-dark w-full md:w-64 text-white flex-shrink-0">
+            <div class="p-6">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2 mb-10">
+                    <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold leading-none">FALCON FLY</h1>
+                        <p class="text-[10px] font-semibold tracking-widest text-blue-400">CAPITAL</p>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="space-y-2 text-sm">
+                    <a href="user-dash.html" class="flex items-center space-x-3 p-3 rounded hover:bg-white/10 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="make-deposit.html" class="flex items-center space-x-3 p-3 rounded hover:bg-white/10 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                        <span>Make Deposit</span>
+                    </a>
+                    <a href="withdrawal.html" class="flex items-center space-x-3 p-3 rounded hover:bg-white/10 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        <span>Withdraw Funds</span>
+                    </a>
+                    <a href="my-investments.html" class="flex items-center space-x-3 p-3 rounded hover:bg-white/10 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                        <span>My Investments</span>
+                    </a>
+                    <a href="transactions.html" class="flex items-center space-x-3 p-3 rounded active-link transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span>Transactions</span>
+                    </a>
+                    <a href="referral.html" class="flex items-center space-x-3 p-3 rounded hover:bg-white/10 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        <span>Referral Program</span>
+                    </a>
+                    <hr class="border-white/10 my-4">
+                    <a href="#" class="flex items-center space-x-3 p-3 rounded hover:bg-red-600/20 text-red-400 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                        <span onclick="logout()">Logout</span>
+                    </a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col">
+            
+            <!-- Top Header -->
+            <header class="bg-white border-b border-gray-200 p-4 flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <span class="text-gray-400 md:hidden">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </span>
+                    <h2 class="text-slate-800 font-semibold uppercase tracking-wider text-sm">Transaction Ledger</h2>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="text-right hidden sm:block">
+                        <p class="text-xs font-bold text-slate-800 leading-none">John Doe</p>
+                        <p class="text-[10px] text-green-600 font-bold uppercase">Verified Member</p>
+                    </div>
+                    <div class="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center border-2 border-green-500">
+                        <span class="text-slate-600 font-bold">JD</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="p-4 md:p-8 space-y-6">
+                
+                <!-- Filters Section -->
+                <div class="bg-white p-4 rounded border border-gray-200 shadow-sm">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div>
+                            <label class="block text-[10px] font-bold text-gray-400 uppercase mb-1">Search Trx ID</label>
+                            <input type="text" placeholder="e.g. #TRX-9921" class="w-full text-xs p-2 border border-gray-200 rounded focus:outline-none focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-bold text-gray-400 uppercase mb-1">Transaction Type</label>
+                            <select class="w-full text-xs p-2 border border-gray-200 rounded focus:outline-none focus:border-blue-500">
+                                <option>All Types</option>
+                                <option>Deposits</option>
+                                <option>Withdrawals</option>
+                                <option>Profits</option>
+                                <option>Referral Bonus</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-bold text-gray-400 uppercase mb-1">Status</label>
+                            <select class="w-full text-xs p-2 border border-gray-200 rounded focus:outline-none focus:border-blue-500">
+                                <option>All Status</option>
+                                <option>Completed</option>
+                                <option>Pending</option>
+                                <option>Rejected</option>
+                            </select>
+                        </div>
+                        <div class="flex items-end">
+                            <button class="w-full bg-blue-600 text-white text-xs font-bold py-2 rounded uppercase hover:bg-blue-700 transition">Filter Results</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transactions Table -->
+                <div class="bg-white rounded border border-gray-200 shadow-sm overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs">
+                            <thead class="bg-slate-50 text-gray-500 uppercase font-bold border-b border-gray-100">
+                                <tr>
+                                    <th class="p-4">Transaction ID</th>
+                                    <th class="p-4">Date & Time</th>
+                                    <th class="p-4">Type</th>
+                                    <th class="p-4">Amount</th>
+                                    <th class="p-4">Method</th>
+                                    <th class="p-4">Status</th>
+                                    <th class="p-4">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-100">
+                                <!-- Row 1 -->
+                                <tr>
+                                    <td class="p-4 font-mono text-blue-600">#FF-TRX-10294</td>
+                                    <td class="p-4 text-gray-500">Oct 26, 2024 <span class="block text-[10px] opacity-70">10:45 AM</span></td>
+                                    <td class="p-4"><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded text-[10px] font-bold">DEPOSIT</span></td>
+                                    <td class="p-4 font-bold text-slate-800">$2,500.00</td>
+                                    <td class="p-4 text-gray-500 flex items-center gap-2">
+                                        <div class="w-4 h-4 bg-orange-400 rounded-full flex items-center justify-center text-[8px] text-white">₿</div>
+                                        Bitcoin
+                                    </td>
+                                    <td class="p-4"><span class="flex items-center gap-1 text-green-600 font-bold"><span class="w-1.5 h-1.5 bg-green-600 rounded-full"></span> COMPLETED</span></td>
+                                    <td class="p-4"><button class="text-gray-400 hover:text-blue-600"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg></button></td>
+                                </tr>
+                                <!-- Row 2 -->
+                                <tr>
+                                    <td class="p-4 font-mono text-blue-600">#FF-TRX-10288</td>
+                                    <td class="p-4 text-gray-500">Oct 25, 2024 <span class="block text-[10px] opacity-70">02:15 PM</span></td>
+                                    <td class="p-4"><span class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded text-[10px] font-bold">PROFIT</span></td>
+                                    <td class="p-4 font-bold text-green-600">+$62.50</td>
+                                    <td class="p-4 text-gray-500 italic">Trading ROI</td>
+                                    <td class="p-4"><span class="flex items-center gap-1 text-green-600 font-bold"><span class="w-1.5 h-1.5 bg-green-600 rounded-full"></span> COMPLETED</span></td>
+                                    <td class="p-4"><button class="text-gray-400 hover:text-blue-600"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg></button></td>
+                                </tr>
+                                <!-- Row 3 -->
+                                <tr>
+                                    <td class="p-4 font-mono text-blue-600">#FF-TRX-10250</td>
+                                    <td class="p-4 text-gray-500">Oct 24, 2024 <span class="block text-[10px] opacity-70">09:00 AM</span></td>
+                                    <td class="p-4"><span class="bg-red-100 text-red-700 px-2 py-0.5 rounded text-[10px] font-bold">WITHDRAWAL</span></td>
+                                    <td class="p-4 font-bold text-slate-800">$500.00</td>
+                                    <td class="p-4 text-gray-500 flex items-center gap-2">
+                                        <div class="w-4 h-4 bg-blue-400 rounded-full flex items-center justify-center text-[8px] text-white">Ξ</div>
+                                        Ethereum
+                                    </td>
+                                    <td class="p-4"><span class="flex items-center gap-1 text-orange-500 font-bold"><span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span> PENDING</span></td>
+                                    <td class="p-4"><button class="text-gray-400 hover:text-blue-600"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg></button></td>
+                                </tr>
+                                <!-- Row 4 -->
+                                <tr>
+                                    <td class="p-4 font-mono text-blue-600">#FF-TRX-10212</td>
+                                    <td class="p-4 text-gray-500">Oct 22, 2024 <span class="block text-[10px] opacity-70">11:30 PM</span></td>
+                                    <td class="p-4"><span class="bg-purple-100 text-purple-700 px-2 py-0.5 rounded text-[10px] font-bold">REFERRAL</span></td>
+                                    <td class="p-4 font-bold text-green-600">+$15.00</td>
+                                    <td class="p-4 text-gray-500 italic">User: mark_pro</td>
+                                    <td class="p-4"><span class="flex items-center gap-1 text-green-600 font-bold"><span class="w-1.5 h-1.5 bg-green-600 rounded-full"></span> COMPLETED</span></td>
+                                    <td class="p-4"><button class="text-gray-400 hover:text-blue-600"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="p-4 bg-slate-50 border-t border-gray-100 flex justify-between items-center">
+                        <p class="text-[10px] text-gray-500 font-bold uppercase">Showing 1 to 4 of 48 entries</p>
+                        <div class="flex space-x-1">
+                            <button class="px-3 py-1 bg-white border border-gray-200 rounded text-xs text-gray-400 cursor-not-allowed">Prev</button>
+                            <button class="px-3 py-1 bg-blue-600 border border-blue-600 rounded text-xs text-white">1</button>
+                            <button class="px-3 py-1 bg-white border border-gray-200 rounded text-xs text-gray-600 hover:bg-gray-50 transition">2</button>
+                            <button class="px-3 py-1 bg-white border border-gray-200 rounded text-xs text-gray-600 hover:bg-gray-50 transition">3</button>
+                            <button class="px-3 py-1 bg-white border border-gray-200 rounded text-xs text-gray-600 hover:bg-gray-50 transition">Next</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Export Options -->
+                <div class="flex justify-end space-x-3">
+                    <button class="flex items-center space-x-2 bg-slate-800 text-white text-[10px] font-bold px-4 py-2 rounded uppercase hover:bg-slate-700 transition">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        <span>Export CSV</span>
+                    </button>
+                    <button class="flex items-center space-x-2 bg-white border border-gray-200 text-slate-800 text-[10px] font-bold px-4 py-2 rounded uppercase hover:bg-gray-50 transition">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                        <span>Print Statement</span>
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Footer Stats -->
+            <footer class="mt-auto bg-[#001529] p-4 text-center">
+                <p class="text-[10px] text-blue-400 uppercase tracking-widest font-bold">
+                    &copy; 2024 Falcon Fly Capital LTD. Security Status: <span class="text-green-500">SSL Encrypted / DDoS Protected</span>
+                </p>
+            </footer>
+
+        </main>
+    </div>
+
+    <script>
+         function logout() {
+            localStorage.removeItem("isLoggedIn");
+            window.location.href = "login.html";
+          }
+
+                  function logout() {
+    localStorage.removeItem("isLoggedIn");
+    window.location.href = "login.html";
+  }
+    </script>
+</body>
+</html>

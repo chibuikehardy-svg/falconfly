@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Withdraw Funds - Falcon Fly Capital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #001a33 0%, #003366 100%); }
+        .card-blue { background-color: #002b4e; }
+        .sidebar-dark { background-color: #001529; }
+        .active-link { background-color: #16a34a; color: white; }
+    </style>
+</head>
+
+<script>
+  if (localStorage.getItem("isLoggedIn") !== "true") {
+    window.location.href = "login.html";
+  }
+</script>
+
+<body class="bg-slate-100">
+
+    <div class="min-h-screen flex flex-col md:flex-row">
+        
+        <!-- Sidebar (Maintained as requested) -->
+        <aside class="sidebar-dark w-full md:w-64 text-white flex-shrink-0">
+            <div class="p-6">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2 mb-10">
+                    <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold leading-none">FALCON FLY</h1>
+                        <p class="text-[10px] font-semibold tracking-widest text-blue-400">CAPITAL</p>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="space-y-2 text-sm">
+                    <a href="user-dash.html" class="flex items-center space-x-3 p-3 rounded hover:bg-white/10 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="make-deposit.html" class="flex items-center space-x-3 p-3 rounded hover:bg-white/10 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                        <span>Make Deposit</span>
+                    </a>
+                    <a href="withdrawal.html" class="flex items-center space-x-3 p-3 rounded active-link">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        <span>Withdraw Funds</span>
+                    </a>
+                    <a href="my-investments.html" class="flex items-center space-x-3 p-3 rounded hover:bg-white/10 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                        <span>My Investments</span>
+                    </a>
+                    <a href="transactions.html" class="flex items-center space-x-3 p-3 rounded hover:bg-white/10 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span>Transactions</span>
+                    </a>
+                    <a href="referral.html" class="flex items-center space-x-3 p-3 rounded hover:bg-white/10 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        <span>Referral Program</span>
+                    </a>
+                    <hr class="border-white/10 my-4">
+                    <a href="#" class="flex items-center space-x-3 p-3 rounded hover:bg-red-600/20 text-red-400 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                        <span onclick="logout()">Logout</span>
+                    </a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col">
+            
+            <!-- Top Header -->
+            <header class="bg-white border-b border-gray-200 p-4 flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <span class="text-gray-400 md:hidden">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </span>
+                    <h2 class="text-slate-800 font-semibold uppercase tracking-wider text-sm">Withdrawal Request</h2>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="text-right hidden sm:block">
+                        <p class="text-xs font-bold text-slate-800 leading-none">John Doe</p>
+                        <p class="text-[10px] text-green-600 font-bold uppercase">Verified Member</p>
+                    </div>
+                    <div class="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center border-2 border-green-500">
+                        <span class="text-slate-600 font-bold">JD</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Withdrawal Content -->
+            <div class="p-4 md:p-8 space-y-6">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Form Side -->
+                    <div class="lg:col-span-2 space-y-6">
+                        
+                        <!-- Balance Card -->
+                        <div class="bg-white p-6 rounded border border-gray-200 shadow-sm flex items-center justify-between">
+                            <div>
+                                <p class="text-[10px] uppercase font-bold text-gray-500 mb-1 tracking-widest">Available for Withdrawal</p>
+                                <h4 class="text-3xl font-bold text-slate-800">$12,450.00</h4>
+                            </div>
+                            <div class="p-3 bg-green-100 rounded-full">
+                                <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                            </div>
+                        </div>
+
+                        <!-- Main Form -->
+                        <div class="bg-white rounded border border-gray-200 shadow-sm overflow-hidden">
+                            <div class="p-4 border-b border-gray-100">
+                                <h3 class="font-bold text-slate-800 text-sm uppercase tracking-wider">Withdrawal Details</h3>
+                            </div>
+                            <form action="#" method="POST" class="p-6 space-y-5">
+                                <div>
+                                    <label class="block text-[10px] font-bold text-gray-500 uppercase mb-2">Select Method</label>
+                                    <select class="w-full bg-slate-50 border border-gray-200 rounded p-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option>Bitcoin (BTC) Wallet</option>
+                                        <option>Ethereum (ETH) Wallet</option>
+                                        <option>USDT (TRC20)</option>
+                                        <option>Litecoin (LTC)</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-[10px] font-bold text-gray-500 uppercase mb-2">Amount to Withdraw (USD)</label>
+                                    <div class="relative">
+                                        <span class="absolute left-4 top-3 text-gray-400 font-bold">$</span>
+                                        <input type="number" placeholder="0.00" class="w-full bg-slate-50 border border-gray-200 rounded p-3 pl-8 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 font-bold">
+                                    </div>
+                                    <p class="text-[10px] text-gray-400 mt-1 italic">Minimum withdrawal: $50.00</p>
+                                </div>
+
+                                <div>
+                                    <label class="block text-[10px] font-bold text-gray-500 uppercase mb-2">Your Wallet Address</label>
+                                    <input type="text" placeholder="Enter your destination address" class="w-full bg-slate-50 border border-gray-200 rounded p-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+
+                                <div class="bg-orange-50 border-l-4 border-orange-400 p-4">
+                                    <div class="flex">
+                                        <div class="flex-shrink-0">
+                                            <svg class="h-5 w-5 text-orange-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" /></svg>
+                                        </div>
+                                        <div class="ml-3">
+                                            <p class="text-xs text-orange-700 font-semibold">
+                                                Please double-check your wallet address. Falcon Fly Capital is not responsible for funds sent to an incorrect address.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="w-full bg-slate-800 text-white font-bold py-3 rounded uppercase tracking-widest hover:bg-slate-700 transition shadow-lg">
+                                    Confirm Withdrawal
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Info Side -->
+                    <div class="space-y-6">
+                        <!-- Withdrawal Rules -->
+                        <div class="bg-white rounded border border-gray-200 shadow-sm p-6">
+                            <h3 class="font-bold text-slate-800 uppercase text-xs mb-4 border-b pb-2">Withdrawal Policy</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start space-x-3">
+                                    <div class="w-5 h-5 bg-blue-100 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+                                        <svg class="w-3 h-3 text-blue-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"></path></svg>
+                                    </div>
+                                    <p class="text-[11px] text-gray-600">Withdrawals are processed within <span class="font-bold">24 hours</span> of request.</p>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <div class="w-5 h-5 bg-green-100 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+                                        <svg class="w-3 h-3 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg>
+                                    </div>
+                                    <p class="text-[11px] text-gray-600">Zero fees on all crypto withdrawals for Verified Members.</p>
+                                </li>
+                                <li class="flex items-start space-x-3">
+                                    <div class="w-5 h-5 bg-orange-100 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
+                                        <svg class="w-3 h-3 text-orange-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
+                                    </div>
+                                    <p class="text-[11px] text-gray-600">Daily limit: $50,000.00 for Standard accounts.</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Support Card -->
+                        <div class="card-blue rounded-lg p-6 text-white shadow-lg">
+                            <h3 class="text-xs font-bold uppercase tracking-widest text-blue-300 mb-2">Need Help?</h3>
+                            <p class="text-xs text-blue-100 mb-4 opacity-80">If you experience any issues with your withdrawal, contact our 24/7 financial support team.</p>
+                            <button class="w-full bg-blue-600 hover:bg-blue-500 text-white text-[10px] font-bold py-2 rounded uppercase transition">Open Ticket</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Recent Withdrawals Table -->
+                <div class="bg-white rounded border border-gray-200 shadow-sm overflow-hidden">
+                    <div class="p-4 border-b border-gray-100">
+                        <h3 class="font-bold text-slate-800 text-sm uppercase tracking-wider">Recent Withdrawal History</h3>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs">
+                            <thead class="bg-slate-50 text-gray-500 uppercase">
+                                <tr>
+                                    <th class="p-4">Transaction ID</th>
+                                    <th class="p-4">Gateway</th>
+                                    <th class="p-4">Amount</th>
+                                    <th class="p-4">Status</th>
+                                    <th class="p-4">Date</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-100">
+                                <tr>
+                                    <td class="p-4 font-mono text-gray-500">#FFC-982102</td>
+                                    <td class="p-4 font-semibold text-slate-700">Ethereum</td>
+                                    <td class="p-4 font-bold">$500.00</td>
+                                    <td class="p-4"><span class="bg-green-100 text-green-700 px-2 py-1 rounded-full text-[9px] font-bold uppercase">Completed</span></td>
+                                    <td class="p-4 text-gray-400">Oct 20, 2024</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 font-mono text-gray-500">#FFC-981045</td>
+                                    <td class="p-4 font-semibold text-slate-700">Bitcoin</td>
+                                    <td class="p-4 font-bold">$1,200.00</td>
+                                    <td class="p-4"><span class="bg-green-100 text-green-700 px-2 py-1 rounded-full text-[9px] font-bold uppercase">Completed</span></td>
+                                    <td class="p-4 text-gray-400">Sep 15, 2024</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer Stats -->
+            <footer class="mt-auto bg-[#001529] p-4 text-center">
+                <p class="text-[10px] text-blue-400 uppercase tracking-widest font-bold">
+                    &copy; 2024 Falcon Fly Capital LTD. Security Status: <span class="text-green-500">SSL Encrypted / DDoS Protected</span>
+                </p>
+            </footer>
+
+        </main>
+    </div>
+
+    <script>
+        function logout() {
+            localStorage.removeItem("isLoggedIn");
+            window.location.href = "login.html";
+        }
+
+                function logout() {
+    localStorage.removeItem("isLoggedIn");
+    window.location.href = "login.html";
+  }
+    </script>
+</body>
+</html>

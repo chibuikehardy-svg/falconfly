@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Deposit - Falcon Fly Capital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #001a33 0%, #003366 100%); }
+        .card-blue { background-color: #002b4e; }
+        .sidebar-dark { background-color: #001529; }
+        .active-link { background-color: #16a34a; color: white; }
+        
+        /* Custom radio styling for plans */
+        .plan-card input:checked + div {
+            border-color: #16a34a;
+            background-color: #f0fdf4;
+            ring: 2px;
+            ring-color: #16a34a;
+        }
+    </style>
+</head>
+<script>
+  if (localStorage.getItem("isLoggedIn") !== "true") {
+    window.location.href = "login.html";
+  }
+</script>
+
+<body class="bg-slate-100">
+
+    <div class="min-h-screen flex flex-col md:flex-row">
+        
+        <!-- Sidebar (Maintained as requested) -->
+        <aside class="sidebar-dark w-full md:w-64 text-white flex-shrink-0">
+            <div class="p-6">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2 mb-10">
+                    <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold leading-none">FALCON FLY</h1>
+                        <p class="text-[10px] font-semibold tracking-widest text-blue-400">CAPITAL</p>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="space-y-2 text-sm">
+                    <a href="user-dash.html" class="flex items-center space-x-3 p-3 rounded hover:bg-white/10 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="make-deposit.html" class="flex items-center space-x-3 p-3 rounded active-link">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                        <span>Make Deposit</span>
+                    </a>
+                    <a href="withdrawal.html" class="flex items-center space-x-3 p-3 rounded hover:bg-white/10 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        <span>Withdraw Funds</span>
+                    </a>
+                    <a href="my-investments.html" class="flex items-center space-x-3 p-3 rounded hover:bg-white/10 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                        <span>My Investments</span>
+                    </a>
+                    <a href="transactions.html" class="flex items-center space-x-3 p-3 rounded hover:bg-white/10 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span>Transactions</span>
+                    </a>
+                    <a href="referral.html" class="flex items-center space-x-3 p-3 rounded hover:bg-white/10 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        <span>Referral Program</span>
+                    </a>
+                    <hr class="border-white/10 my-4">
+                    <a href="#" class="flex items-center space-x-3 p-3 rounded hover:bg-red-600/20 text-red-400 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                        <span onclick="logout()">Logout</span>
+                    </a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col">
+            
+            <!-- Top Header -->
+            <header class="bg-white border-b border-gray-200 p-4 flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <span class="text-gray-400 md:hidden">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </span>
+                    <h2 class="text-slate-800 font-semibold uppercase tracking-wider text-sm">Deposit Funds</h2>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="text-right hidden sm:block">
+                        <p class="text-xs font-bold text-slate-800 leading-none">John Doe</p>
+                        <p class="text-[10px] text-green-600 font-bold uppercase">Verified Member</p>
+                    </div>
+                    <div class="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center border-2 border-green-500">
+                        <span class="text-slate-600 font-bold">JD</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Deposit Form Content -->
+            <div class="p-4 md:p-8">
+                <form action="#" method="POST" class="max-w-4xl mx-auto space-y-8">
+                    
+                    <!-- 1. Select Plan -->
+                    <section>
+                        <h3 class="text-slate-800 font-bold text-sm uppercase tracking-widest mb-4 flex items-center">
+                            <span class="w-6 h-6 bg-slate-800 text-white rounded-full flex items-center justify-center text-[10px] mr-2">1</span>
+                            Choose Investment Plan
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <!-- Plan A -->
+                            <label class="plan-card cursor-pointer">
+                                <input type="radio" name="plan" class="hidden" checked>
+                                <div class="bg-white p-5 rounded border-2 border-transparent shadow-sm transition hover:border-slate-200">
+                                    <p class="text-[10px] font-bold text-blue-600 uppercase">Standard</p>
+                                    <h4 class="text-xl font-bold text-slate-800">120% ROI</h4>
+                                    <p class="text-xs text-gray-500 mt-1">Duration: 24 Hours</p>
+                                    <hr class="my-3">
+                                    <div class="text-[10px] space-y-1 text-gray-600 font-semibold">
+                                        <p>MIN: $100.00</p>
+                                        <p>MAX: $4,999.00</p>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <!-- Plan B -->
+                            <label class="plan-card cursor-pointer">
+                                <input type="radio" name="plan" class="hidden">
+                                <div class="bg-white p-5 rounded border-2 border-transparent shadow-sm transition hover:border-slate-200">
+                                    <p class="text-[10px] font-bold text-green-600 uppercase">Premium</p>
+                                    <h4 class="text-xl font-bold text-slate-800">150% ROI</h4>
+                                    <p class="text-xs text-gray-500 mt-1">Duration: 48 Hours</p>
+                                    <hr class="my-3">
+                                    <div class="text-[10px] space-y-1 text-gray-600 font-semibold">
+                                        <p>MIN: $5,000.00</p>
+                                        <p>MAX: $19,999.00</p>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <!-- Plan C -->
+                            <label class="plan-card cursor-pointer">
+                                <input type="radio" name="plan" class="hidden">
+                                <div class="bg-white p-5 rounded border-2 border-transparent shadow-sm transition hover:border-slate-200">
+                                    <p class="text-[10px] font-bold text-orange-600 uppercase">Executive</p>
+                                    <h4 class="text-xl font-bold text-slate-800">200% ROI</h4>
+                                    <p class="text-xs text-gray-500 mt-1">Duration: 72 Hours</p>
+                                    <hr class="my-3">
+                                    <div class="text-[10px] space-y-1 text-gray-600 font-semibold">
+                                        <p>MIN: $20,000.00</p>
+                                        <p>MAX: UNLIMITED</p>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </section>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <!-- 2. Payment Method -->
+                        <section>
+                            <h3 class="text-slate-800 font-bold text-sm uppercase tracking-widest mb-4 flex items-center">
+                                <span class="w-6 h-6 bg-slate-800 text-white rounded-full flex items-center justify-center text-[10px] mr-2">2</span>
+                                Payment Method
+                            </h3>
+                            <div class="bg-white rounded border border-gray-200 p-6 space-y-4">
+                                <div class="relative">
+                                    <select class="w-full bg-slate-50 border border-gray-300 rounded p-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 appearance-none">
+                                        <option value="btc">Bitcoin (BTC)</option>
+                                        <option value="eth">Ethereum (ETH)</option>
+                                        <option value="usdt">USDT (TRC20)</option>
+                                        <option value="ltc">Litecoin (LTC)</option>
+                                    </select>
+                                    <div class="absolute right-3 top-3 pointer-events-none">
+                                        <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"></path></svg>
+                                    </div>
+                                </div>
+                                <p class="text-[10px] text-gray-400 font-semibold italic">* Coin exchange rate will be calculated at the point of payment.</p>
+                            </div>
+                        </section>
+
+                        <!-- 3. Deposit Amount -->
+                        <section>
+                            <h3 class="text-slate-800 font-bold text-sm uppercase tracking-widest mb-4 flex items-center">
+                                <span class="w-6 h-6 bg-slate-800 text-white rounded-full flex items-center justify-center text-[10px] mr-2">3</span>
+                                Deposit Amount
+                            </h3>
+                            <div class="bg-white rounded border border-gray-200 p-6 space-y-4">
+                                <div class="relative">
+                                    <span class="absolute left-4 top-3 text-gray-400 font-bold">$</span>
+                                    <input type="number" placeholder="0.00" class="w-full bg-slate-50 border border-gray-300 rounded p-3 pl-8 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 font-bold">
+                                </div>
+                                <div class="flex justify-between text-xs">
+                                    <span class="text-gray-500">Available Balance:</span>
+                                    <span class="font-bold text-slate-800">$12,450.00</span>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- Summary & Submit -->
+                    <div class="bg-slate-800 rounded-lg p-6 text-white flex flex-col md:flex-row justify-between items-center shadow-xl">
+                        <div class="mb-4 md:mb-0">
+                            <h4 class="text-lg font-bold">Proceed to Payment</h4>
+                            <p class="text-blue-300 text-xs">You will be redirected to the secure payment gateway.</p>
+                        </div>
+                        <button type="submit" class="w-full md:w-auto bg-green-600 hover:bg-green-500 text-white px-10 py-3 rounded font-bold uppercase tracking-widest transition shadow-lg">
+                            Confirm Deposit
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- Footer Stats -->
+            <footer class="mt-auto bg-[#001529] p-4 text-center">
+                <p class="text-[10px] text-blue-400 uppercase tracking-widest font-bold">
+                    &copy; 2024 Falcon Fly Capital LTD. Security Status: <span class="text-green-500">SSL Encrypted / DDoS Protected</span>
+                </p>
+            </footer>
+
+        </main>
+    </div>
+
+    <script>
+        function logout() {
+            localStorage.removeItem("isLoggedIn");
+            window.location.href = "login.html";
+        }
+
+                function logout() {
+    localStorage.removeItem("isLoggedIn");
+    window.location.href = "login.html";
+  }
+    </script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referral Program - Falcon Fly Capital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #001a33 0%, #003366 100%); }
+        .card-blue { background-color: #002b4e; }
+        .sidebar-dark { background-color: #001529; }
+        .active-link { background-color: #16a34a; color: white; }
+    </style>
+</head>
+<script>
+  if (localStorage.getItem("isLoggedIn") !== "true") {
+    window.location.href = "login.html";
+  }
+</script>
+
+<body class="bg-slate-100">
+
+    <div class="min-h-screen flex flex-col md:flex-row">
+        
+        <!-- Sidebar (Maintained as requested) -->
+        <aside class="sidebar-dark w-full md:w-64 text-white flex-shrink-0">
+            <div class="p-6">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2 mb-10">
+                    <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold leading-none">FALCON FLY</h1>
+                        <p class="text-[10px] font-semibold tracking-widest text-blue-400">CAPITAL</p>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="space-y-2 text-sm">
+                    <a href="user-dash.html" class="flex items-center space-x-3 p-3 rounded hover:bg-white/10 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="make-deposit.html" class="flex items-center space-x-3 p-3 rounded hover:bg-white/10 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                        <span>Make Deposit</span>
+                    </a>
+                    <a href="withdrawal.html" class="flex items-center space-x-3 p-3 rounded hover:bg-white/10 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        <span>Withdraw Funds</span>
+                    </a>
+                    <a href="my-investments.html" class="flex items-center space-x-3 p-3 rounded hover:bg-white/10 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                        <span>My Investments</span>
+                    </a>
+                    <a href="transactions.html" class="flex items-center space-x-3 p-3 rounded hover:bg-white/10 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span>Transactions</span>
+                    </a>
+                    <a href="referral.html" class="flex items-center space-x-3 p-3 rounded active-link">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        <span>Referral Program</span>
+                    </a>
+                    <hr class="border-white/10 my-4">
+                    <a href="" class="flex items-center space-x-3 p-3 rounded hover:bg-red-600/20 text-red-400 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                        <span onclick="logout()">Logout</span>
+                    </a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col">
+            
+            <!-- Top Header -->
+            <header class="bg-white border-b border-gray-200 p-4 flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <span class="text-gray-400 md:hidden">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </span>
+                    <h2 class="text-slate-800 font-semibold uppercase tracking-wider text-sm">Affiliate Management</h2>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="text-right hidden sm:block">
+                        <p class="text-xs font-bold text-slate-800 leading-none">John Doe</p>
+                        <p class="text-[10px] text-green-600 font-bold uppercase">Verified Member</p>
+                    </div>
+                    <div class="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center border-2 border-green-500">
+                        <span class="text-slate-600 font-bold">JD</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="p-4 md:p-8 space-y-6">
+                
+                <!-- Affiliate Link Card -->
+                <div class="gradient-bg rounded-lg p-8 text-white shadow-lg relative overflow-hidden">
+                    <div class="relative z-10 max-w-2xl">
+                        <h3 class="text-2xl font-bold mb-2">Invite Friends & Earn More</h3>
+                        <p class="text-blue-100 text-sm opacity-80 mb-6">Share your unique referral link and receive a <span class="text-green-400 font-bold">5% commission</span> on every deposit made by your referrals instantly.</p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-2">
+                            <div class="flex-1 bg-white/10 border border-white/20 rounded p-3 font-mono text-sm overflow-hidden text-ellipsis whitespace-nowrap">
+                                https://falconflycapital.com/?ref=johndoe77
+                            </div>
+                            <button onclick="copyRefLink()" class="bg-green-600 hover:bg-green-500 text-white px-6 py-3 rounded text-xs font-bold uppercase transition flex items-center justify-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+                                Copy Link
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Decorative Icon -->
+                    <svg class="absolute right-[-20px] bottom-[-20px] w-64 h-64 text-white/5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                </div>
+
+                <!-- Referral Stats Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="bg-white p-5 rounded border border-gray-200 shadow-sm">
+                        <p class="text-[10px] uppercase font-bold text-gray-500 mb-1 tracking-widest">Total Referrals</p>
+                        <h4 class="text-2xl font-bold text-slate-800">12</h4>
+                        <p class="text-[10px] text-blue-500 mt-2 font-bold">Lifetime network</p>
+                    </div>
+                    <div class="bg-white p-5 rounded border border-gray-200 shadow-sm">
+                        <p class="text-[10px] uppercase font-bold text-gray-500 mb-1 tracking-widest">Active Referrals</p>
+                        <h4 class="text-2xl font-bold text-slate-800">05</h4>
+                        <p class="text-[10px] text-green-500 mt-2 font-bold uppercase">Currently Investing</p>
+                    </div>
+                    <div class="bg-white p-5 rounded border border-gray-200 shadow-sm">
+                        <p class="text-[10px] uppercase font-bold text-gray-500 mb-1 tracking-widest">Total Commission</p>
+                        <h4 class="text-2xl font-bold text-green-600">$450.80</h4>
+                        <p class="text-[10px] text-gray-400 mt-2 font-bold uppercase">Earned to date</p>
+                    </div>
+                    <div class="bg-white p-5 rounded border border-gray-200 shadow-sm">
+                        <p class="text-[10px] uppercase font-bold text-gray-500 mb-1 tracking-widest">Commission Level</p>
+                        <h4 class="text-2xl font-bold text-slate-800">Level 1</h4>
+                        <p class="text-[10px] text-orange-500 mt-2 font-bold uppercase">Standard Affiliate</p>
+                    </div>
+                </div>
+
+                <!-- Referred Users Table -->
+                <div class="bg-white rounded border border-gray-200 shadow-sm overflow-hidden">
+                    <div class="p-4 border-b border-gray-100 flex justify-between items-center">
+                        <h3 class="font-bold text-slate-800 text-sm uppercase tracking-wider">My Referral Network</h3>
+                        <div class="flex gap-2">
+                             <input type="text" placeholder="Search user..." class="text-xs p-1.5 border border-gray-200 rounded focus:outline-none focus:border-blue-500">
+                        </div>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs">
+                            <thead class="bg-slate-50 text-gray-500 uppercase">
+                                <tr>
+                                    <th class="p-4">Username</th>
+                                    <th class="p-4">Date Joined</th>
+                                    <th class="p-4">Total Deposited</th>
+                                    <th class="p-4">Commission Earned</th>
+                                    <th class="p-4">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-100">
+                                <tr>
+                                    <td class="p-4">
+                                        <div class="flex items-center space-x-2">
+                                            <div class="w-7 h-7 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold">MS</div>
+                                            <span class="font-bold text-slate-700">mike_smith</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-4 text-gray-500">Oct 24, 2024</td>
+                                    <td class="p-4 font-bold">$1,000.00</td>
+                                    <td class="p-4 text-green-600 font-bold">$50.00</td>
+                                    <td class="p-4"><span class="bg-green-100 text-green-700 px-2 py-1 rounded text-[9px] font-bold uppercase">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4">
+                                        <div class="flex items-center space-x-2">
+                                            <div class="w-7 h-7 bg-slate-100 text-slate-600 rounded-full flex items-center justify-center font-bold">AJ</div>
+                                            <span class="font-bold text-slate-700">alice_j</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-4 text-gray-500">Oct 20, 2024</td>
+                                    <td class="p-4 font-bold">$5,000.00</td>
+                                    <td class="p-4 text-green-600 font-bold">$250.00</td>
+                                    <td class="p-4"><span class="bg-green-100 text-green-700 px-2 py-1 rounded text-[9px] font-bold uppercase">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4">
+                                        <div class="flex items-center space-x-2">
+                                            <div class="w-7 h-7 bg-slate-100 text-slate-600 rounded-full flex items-center justify-center font-bold">RK</div>
+                                            <span class="font-bold text-slate-700">rob_king</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-4 text-gray-500">Oct 15, 2024</td>
+                                    <td class="p-4 font-bold">$0.00</td>
+                                    <td class="p-4 text-gray-400 font-bold">$0.00</td>
+                                    <td class="p-4"><span class="bg-gray-100 text-gray-500 px-2 py-1 rounded text-[9px] font-bold uppercase">Registered</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="p-4 bg-slate-50 border-t border-gray-100 text-center">
+                        <button class="text-blue-600 text-[10px] font-bold uppercase hover:underline">View All Referrals</button>
+                    </div>
+                </div>
+
+                <!-- Affiliate Tiers Info -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div class="lg:col-span-2 bg-white p-6 rounded border border-gray-200 shadow-sm">
+                        <h3 class="font-bold text-slate-800 text-sm uppercase tracking-wider mb-4">Commission Structure</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-3 bg-blue-50 rounded">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 bg-blue-600 text-white rounded flex items-center justify-center font-bold">1</div>
+                                    <div>
+                                        <p class="text-xs font-bold text-slate-800 uppercase">Direct Referrals (L1)</p>
+                                        <p class="text-[10px] text-gray-500">Anyone who signs up using your link.</p>
+                                    </div>
+                                </div>
+                                <span class="text-lg font-bold text-blue-600">5%</span>
+                            </div>
+                            <div class="flex items-center justify-between p-3 border border-gray-100 rounded opacity-60">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 bg-slate-400 text-white rounded flex items-center justify-center font-bold">2</div>
+                                    <div>
+                                        <p class="text-xs font-bold text-slate-800 uppercase">Indirect Referrals (L2)</p>
+                                        <p class="text-[10px] text-gray-500">Upgrade to Regional Rep to unlock.</p>
+                                    </div>
+                                </div>
+                                <span class="text-lg font-bold text-slate-400">2%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-blue rounded-lg p-6 text-white shadow-lg">
+                        <h3 class="text-xs font-bold uppercase tracking-widest text-orange-400 mb-4">Regional Representative</h3>
+                        <p class="text-xs text-blue-100 mb-4">Unlock Level 2 commissions and a monthly stipend by becoming a representative.</p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex justify-between text-[10px] font-bold">
+                                <span>Requirements</span>
+                                <span>12/50 Active</span>
+                            </div>
+                            <div class="w-full bg-white/10 rounded-full h-1.5">
+                                <div class="bg-orange-500 h-1.5 rounded-full" style="width: 24%"></div>
+                            </div>
+                        </div>
+                        <button class="w-full bg-orange-500 hover:bg-orange-400 text-white text-[10px] font-bold py-2 rounded uppercase transition">Learn More</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer Stats -->
+            <footer class="mt-auto bg-[#001529] p-4 text-center">
+                <p class="text-[10px] text-blue-400 uppercase tracking-widest font-bold">
+                    &copy; 2024 Falcon Fly Capital LTD. Security Status: <span class="text-green-500">SSL Encrypted / DDoS Protected</span>
+                </p>
+            </footer>
+
+        </main>
+    </div>
+
+    <script>
+        function copyRefLink() {
+            const link = "https://falconflycapital.com/?ref=johndoe77";
+            navigator.clipboard.writeText(link).then(() => {
+                alert("Referral link copied to clipboard!");
+            });
+        }
+
+        function logout() {
+            localStorage.removeItem("isLoggedIn");
+            window.location.href = "login.html";
+        }
+
+                function logout() {
+    localStorage.removeItem("isLoggedIn");
+    window.location.href = "login.html";
+  }
+    </script>
+</body>
+</html>
