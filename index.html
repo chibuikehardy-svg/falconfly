@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falcon Fly Capital - Investment Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #001a33 0%, #003366 100%); }
+        .card-blue { background-color: #002b4e; }
+        .dark-footer { background-color: #001529; }
+    </style>
+</head>
+<body class="bg-slate-100 text-white">
+
+    <!-- Header Section -->
+    <header class="bg-white text-slate-800">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold leading-none text-blue-900">FALCON FLY</h1>
+                    <p class="text-sm font-semibold tracking-widest text-blue-700">CAPITAL</p>
+                </div>
+            </div>
+
+            <!-- Top Actions -->
+            <div class="flex flex-wrap gap-2">
+                <button class="bg-blue-900 text-white text-xs px-4 py-2 rounded flex items-center uppercase font-bold">
+                    Profit Calculator <span class="ml-2">+-/=</span>
+                </button>
+                <button class="bg-green-600 text-white text-xs px-4 py-2 rounded flex items-center uppercase font-bold">
+                    <a href="accoun-registration.html">
+                    Registration Account
+                    </a>
+                </button>
+                <button class="bg-green-700 text-white text-xs px-4 py-2 rounded flex items-center uppercase font-bold">
+                    <a href="login.html">
+                    Log In To Your Account
+                    </a>
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <nav class="bg-slate-50 border-t border-b border-gray-200">
+            <div class="container mx-auto px-4">
+                <ul class="flex flex-wrap justify-start py-3 text-[10px] md:text-xs font-bold uppercase text-gray-500 space-x-6">
+                    <li class="flex items-center hover:text-blue-600 cursor-pointer"><span class="mr-1">🏠</span> Home Page</li>
+                    <li class="flex items-center hover:text-blue-600 cursor-pointer"><span class="mr-1">📰</span> News Company</li>
+                    <li class="flex items-center hover:text-blue-600 cursor-pointer"><span class="mr-1">❓</span> FAQ Help</li>
+                    <li class="flex items-center hover:text-blue-600 cursor-pointer"><span class="mr-1">📜</span> Rules Conditions</li>
+                    <li class="flex items-center hover:text-blue-600 cursor-pointer"><span class="mr-1">📞</span> Contact Us Support</li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-[450px] overflow-hidden">
+        <div id="slideshow" class="absolute inset-0">
+            <div class="hero-slide absolute inset-0 opacity-100 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070');"></div>
+            <div class="hero-slide absolute inset-0 opacity-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=2070');"></div>
+            <div class="hero-slide absolute inset-0 opacity-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=2070');"></div>
+        </div>
+        <div class="absolute inset-0 bg-blue-900/80 flex items-center">
+            <div class="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2">
+                <div class="z-10 text-center lg:text-left">
+                    <h2 class="text-4xl lg:text-6xl font-bold mb-6">Trade with <br><span class="text-green-400">specialists!</span></h2>
+                    <p class="text-sm lg:text-base text-blue-100 max-w-lg mb-8">Financial independence is one of the main aspirations of every modern person. Our team has developed an advanced package of solutions.</p>
+                    <button class="bg-green-500 px-8 py-3 rounded text-sm font-bold uppercase tracking-widest hover:bg-green-400 transition">Invest Now</button>
+                </div>
+                <div class="hidden lg:flex justify-end relative">
+                   <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=687" class="h-[400px] object-contain" alt="Specialist">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Plans -->
+    <section class="gradient-bg py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                
+                <!-- Plan Card Component -->
+                <div class="bg-blue-900/40 border border-blue-400/30 rounded flex flex-col items-center overflow-hidden">
+                    <div class="p-6 text-center w-full">
+                        <div class="mb-2"><svg class="w-12 h-12 mx-auto text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg></div>
+                        <h3 class="font-bold text-xs uppercase mb-1">BASIC</h3>
+                        <p class="text-[10px] text-blue-200 mb-4">(Stocks/Bond)</p>
+                        <div class="bg-white/10 rounded-lg p-3 mb-4">
+                            <span class="text-2xl font-bold text-green-400 block">120%</span>
+                            <span class="text-[10px] text-green-400 uppercase font-bold">After 1 Day</span>
+                        </div>
+                    </div>
+                    <table class="w-full text-[10px] border-t border-blue-800">
+                        <tr class="border-b border-blue-800 bg-blue-950/50">
+                            <td class="p-2">$50 - $200</td>
+                            <td class="p-2 text-right">110%</td>
+                        </tr>
+                        <tr class="border-b border-blue-800">
+                            <td class="p-2">$201 - $400</td>
+                            <td class="p-2 text-right">115%</td>
+                        </tr>
+                        <tr class="border-b border-blue-800 bg-blue-950/50">
+                            <td class="p-2">$401 - $700</td>
+                            <td class="p-2 text-right">120%</td>
+                        </tr>
+                    </table>
+                    <div class="w-full p-2 text-center text-[9px] font-bold uppercase tracking-wider bg-blue-950">Principal: Include</div>
+                </div>
+
+                <!-- (Repeated for other plans with slight variation...) -->
+                <!-- Plan 2: Standard -->
+                <div class="bg-blue-900/40 border border-blue-400/30 rounded flex flex-col items-center overflow-hidden">
+                    <div class="p-6 text-center w-full">
+                        <div class="mb-2"><svg class="w-12 h-12 mx-auto text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+                        <h3 class="font-bold text-xs uppercase mb-1">STANDARD</h3>
+                        <p class="text-[10px] text-blue-200 mb-4">(Agro/Allied)</p>
+                        <div class="bg-white/10 rounded-lg p-3 mb-4">
+                            <span class="text-2xl font-bold text-green-400 block">130%</span>
+                            <span class="text-[10px] text-green-400 uppercase font-bold">After 48 Hours</span>
+                        </div>
+                    </div>
+                    <table class="w-full text-[10px] border-t border-blue-800">
+                        <tr class="border-b border-blue-800 bg-blue-950/50"><td class="p-2">$500 - $1000</td><td class="p-2 text-right">115%</td></tr>
+                        <tr class="border-b border-blue-800"><td class="p-2">$1001 - $2000</td><td class="p-2 text-right">120%</td></tr>
+                        <tr class="border-b border-blue-800 bg-blue-950/50"><td class="p-2">$2001 - $5000</td><td class="p-2 text-right">130%</td></tr>
+                    </table>
+                    <div class="w-full p-2 text-center text-[9px] font-bold uppercase tracking-wider bg-blue-950">Principal: Include</div>
+                </div>
+
+                <!-- Plan 3: Optimal -->
+                <div class="bg-blue-900/40 border border-blue-400/30 rounded flex flex-col items-center overflow-hidden scale-105 z-10 shadow-xl">
+                    <div class="p-6 text-center w-full">
+                        <div class="mb-2"><svg class="w-12 h-12 mx-auto text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path></svg></div>
+                        <h3 class="font-bold text-xs uppercase mb-1">OPTIMAL</h3>
+                        <p class="text-[10px] text-blue-200 mb-4">(FOREX)</p>
+                        <div class="bg-white/10 rounded-lg p-3 mb-4">
+                            <span class="text-2xl font-bold text-green-400 block">140%</span>
+                            <span class="text-[10px] text-green-400 uppercase font-bold">After 48 Hours</span>
+                        </div>
+                    </div>
+                    <table class="w-full text-[10px] border-t border-blue-800">
+                        <tr class="border-b border-blue-800 bg-blue-950/50"><td class="p-2">$1000 - $3000</td><td class="p-2 text-right">120%</td></tr>
+                        <tr class="border-b border-blue-800"><td class="p-2">$3001 - $5000</td><td class="p-2 text-right">130%</td></tr>
+                        <tr class="border-b border-blue-800 bg-blue-950/50"><td class="p-2">$10001 - $25000</td><td class="p-2 text-right">140%</td></tr>
+                    </table>
+                    <div class="w-full p-2 text-center text-[9px] font-bold uppercase tracking-wider bg-blue-950">Principal: Include</div>
+                </div>
+
+                <!-- Plan 4: Digital -->
+                <div class="bg-blue-900/40 border border-blue-400/30 rounded flex flex-col items-center overflow-hidden">
+                    <div class="p-6 text-center w-full">
+                        <div class="mb-2"><svg class="w-12 h-12 mx-auto text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg></div>
+                        <h3 class="font-bold text-xs uppercase mb-1">DIGITAL</h3>
+                        <p class="text-[10px] text-blue-200 mb-4">(Cryptocurrency)</p>
+                        <div class="bg-white/10 rounded-lg p-3 mb-4">
+                            <span class="text-2xl font-bold text-green-400 block">150%</span>
+                            <span class="text-[10px] text-green-400 uppercase font-bold">After 3 Days</span>
+                        </div>
+                    </div>
+                    <table class="w-full text-[10px] border-t border-blue-800">
+                        <tr class="border-b border-blue-800 bg-blue-950/50"><td class="p-2">$2000 - $5000</td><td class="p-2 text-right">125%</td></tr>
+                        <tr class="border-b border-blue-800"><td class="p-2">$5001 - $10000</td><td class="p-2 text-right">140%</td></tr>
+                        <tr class="border-b border-blue-800 bg-blue-950/50"><td class="p-2">$25001 - $50000</td><td class="p-2 text-right">150%</td></tr>
+                    </table>
+                    <div class="w-full p-2 text-center text-[9px] font-bold uppercase tracking-wider bg-blue-950">Principal: Include</div>
+                </div>
+
+                <!-- Plan 5: Business -->
+                <div class="bg-blue-900/40 border border-blue-400/30 rounded flex flex-col items-center overflow-hidden">
+                    <div class="p-6 text-center w-full">
+                        <div class="mb-2"><svg class="w-12 h-12 mx-auto text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div>
+                        <h3 class="font-bold text-xs uppercase mb-1">BUSINESS</h3>
+                        <p class="text-[10px] text-blue-200 mb-4">(Real Estate)</p>
+                        <div class="bg-white/10 rounded-lg p-3 mb-4">
+                            <span class="text-2xl font-bold text-green-400 block">160%</span>
+                            <span class="text-[10px] text-green-400 uppercase font-bold">After 7 Days</span>
+                        </div>
+                    </div>
+                    <table class="w-full text-[10px] border-t border-blue-800">
+                        <tr class="border-b border-blue-800 bg-blue-950/50"><td class="p-2">$5000 - $10000</td><td class="p-2 text-right">130%</td></tr>
+                        <tr class="border-b border-blue-800"><td class="p-2">$25001 - $50000</td><td class="p-2 text-right">150%</td></tr>
+                        <tr class="border-b border-blue-800 bg-blue-950/50"><td class="p-2">$50001 - $100000</td><td class="p-2 text-right">160%</td></tr>
+                    </table>
+                    <div class="w-full p-2 text-center text-[9px] font-bold uppercase tracking-wider bg-blue-950">Principal: Include</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us & Bond Market Section -->
+    <section class="bg-[#003d73] py-16">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+            <!-- Left Side: Chalkboard Graphic -->
+            <div class="bg-slate-900 p-8 rounded border-8 border-slate-700 shadow-2xl relative aspect-square md:aspect-auto">
+                <div class="text-center font-serif">
+                    <h3 class="text-4xl tracking-widest text-white/90 mb-8 border-b border-white/20 pb-4">BOND MARKET</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-red-500/80 p-2 text-[10px] font-bold rotate-[-3deg]">CORPORATE BOND</div>
+                        <div class="bg-orange-400/80 p-2 text-[10px] font-bold rotate-[2deg]">GOVERNMENT BOND</div>
+                        <div class="bg-lime-500/80 p-2 text-[10px] font-bold rotate-[-1deg]">FIXED INCOME</div>
+                        <div class="bg-yellow-400/80 p-2 text-[10px] font-bold rotate-[4deg]">MUNICIPAL BOND</div>
+                        <div class="bg-cyan-500/80 p-2 text-[10px] font-bold">HIGH YIELD DEBT</div>
+                        <div class="bg-white/20 p-2 text-[10px] font-bold border border-white/40">BOND VALUATION</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Text -->
+            <div>
+                <h3 class="text-2xl font-bold mb-4">About Us</h3>
+                <div class="text-sm space-y-4 text-slate-300 leading-relaxed">
+                    <p>falconflycapital.com - this is an association of people in an investment pool, which is managed by an experienced team of traders. By joining us you will receive a guaranteed profit, without risks and delays.</p>
+                    <p>We are experts in quick and cost-effective finance management, we major on stock and bond investment management with professional market analysis. We scout and offer real estate investments with high futuristic returns. We also major on e-currency professional trading on the Forex and Crypto market.</p>
+                    <p>Register, make deposits, make a profit. You can also invite partners and secure a passive income thanks to the referral program.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section class="bg-blue-900 py-12">
+        <div class="container mx-auto px-4">
+            <h3 class="text-2xl font-bold mb-10 border-l-4 border-green-500 pl-4 uppercase tracking-wider">Advantages</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6 text-center">
+                <div class="flex flex-col items-center">
+                    <div class="w-12 h-12 text-blue-300 mb-2"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div>
+                    <span class="text-[10px] uppercase font-bold">Licensed software</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-12 h-12 text-blue-300 mb-2"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg></div>
+                    <span class="text-[10px] uppercase font-bold">DDoS Protection</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-12 h-12 text-blue-300 mb-2"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg></div>
+                    <span class="text-[10px] uppercase font-bold">SSL Encryption</span>
+                </div>
+                <!-- ... other advantage icons ... -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Referral & Info Section -->
+    <section class="bg-[#002d5a] py-16">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Referral -->
+            <div class="flex items-center space-x-4">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Referral" class="w-32 h-48 object-cover rounded shadow-lg">
+                <div>
+                    <div class="text-green-500 font-bold text-3xl">5% 1%</div>
+                    <div class="text-xs text-blue-200">1 LEVEL 2 LEVEL</div>
+                    <h3 class="text-xl font-bold uppercase mt-2">Referral Program</h3>
+                </div>
+            </div>
+
+            <!-- Certificate -->
+            <div class="bg-white/5 p-4 rounded flex items-center justify-center">
+                <img src="https://via.placeholder.com/150x200?text=CERTIFICATE" alt="Certificate" class="h-48 border border-white/20">
+            </div>
+
+            <!-- Company Details -->
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold">Falcon Fly Capital LTD</h3>
+                <p class="text-[10px] text-blue-300">Falcon Fly Capital LTD is an officially registered company in the US.</p>
+                <div class="text-xs space-y-2 font-mono text-blue-100">
+                    <p>NAME: <span class="text-white">Falcon Fly Capital LTD</span></p>
+                    <p>NUMBER: <span class="text-white">+13054823859</span></p>
+                    <p>ADDRESS: <span class="text-white">460 E German Conway, Arkansas 72032</span></p>
+                </div>
+                <button class="bg-green-600 hover:bg-green-500 px-6 py-2 text-xs font-bold uppercase rounded">Certificate</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Stats -->
+    <section class="dark-footer py-8">
+        <div class="container mx-auto px-4 flex flex-col lg:flex-row justify-between items-center gap-8">
+            <div class="flex flex-wrap gap-12 text-sm">
+                <div>
+                    <span class="text-blue-400 block text-[10px] uppercase">Start Date</span>
+                    <span class="font-bold text-lg">Jan 1, 2005</span>
+                </div>
+                <div>
+                    <span class="text-blue-400 block text-[10px] uppercase">Running Days</span>
+                    <span class="font-bold text-lg">6436</span>
+                </div>
+                <div>
+                    <span class="text-blue-400 block text-[10px] uppercase">Total Accounts</span>
+                    <span class="font-bold text-lg">4</span>
+                </div>
+            </div>
+
+            <div class="flex gap-4 w-full lg:w-auto">
+                <div class="bg-white text-slate-900 rounded p-3 flex-1 lg:w-48 text-center text-xs font-bold shadow-inner">
+                    Last 10 Deposit
+                </div>
+                <div class="bg-white text-slate-900 rounded p-3 flex-1 lg:w-48 text-center text-xs font-bold shadow-inner">
+                    Last 10 Withdrawal
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+
+     <footer class="dark-footer pt-16">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            <!-- Col 1: Brand -->
+            <div class="space-y-6">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-width="2"></path></svg>
+                    </div>
+                    <span class="text-lg font-bold">FALCON FLY CAPITAL</span>
+                </div>
+                <p class="text-xs text-blue-200/60 leading-relaxed">
+                    We provide a world-class investment platform for individuals and corporate organizations to grow their wealth through professional market trading.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-blue-600 transition">f</a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-blue-400 transition">t</a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-red-600 transition">y</a>
+                </div>
+            </div>
+
+            <!-- Col 2: Useful Links -->
+            <div>
+                <h4 class="text-sm font-bold uppercase mb-6 tracking-widest text-green-400">Quick Links</h4>
+                <ul class="text-xs space-y-4 text-blue-100/70">
+                    <li><a href="#" class="hover:text-green-400 transition">Investment Plans</a></li>
+                    <li><a href="#" class="hover:text-green-400 transition">About Company</a></li>
+                    <li><a href="#" class="hover:text-green-400 transition">Anti-Spam Policy</a></li>
+                    <li><a href="#" class="hover:text-green-400 transition">Terms of Service</a></li>
+                    <li><a href="#" class="hover:text-green-400 transition">Affiliate Program</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 3: Support -->
+            <div>
+                <h4 class="text-sm font-bold uppercase mb-6 tracking-widest text-green-400">Support</h4>
+                <ul class="text-xs space-y-4 text-blue-100/70">
+                    <li><a href="#" class="hover:text-green-400 transition">Help Center / FAQ</a></li>
+                    <li><a href="#" class="hover:text-green-400 transition">Live Chat Support</a></li>
+                    <li><a href="#" class="hover:text-green-400 transition">Contact Representative</a></li>
+                    <li><a href="#" class="hover:text-green-400 transition">Submit a Ticket</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 4: Contact -->
+            <div>
+                <h4 class="text-sm font-bold uppercase mb-6 tracking-widest text-green-400">Office Info</h4>
+                <div class="text-xs space-y-4 text-blue-100/70">
+                    <p class="flex items-start"><span class="mr-2">📍</span> 460 E German Conway, Arkansas 72032, USA</p>
+                    <p class="flex items-center"><span class="mr-2">📞</span> +1 305 482 3859</p>
+                    <p class="flex items-center"><span class="mr-2">✉️</span> support@falconflycapital.com</p>
+                    <div class="pt-4">
+                        <span class="inline-block bg-green-500/10 text-green-400 border border-green-500/20 px-3 py-1 rounded-full text-[10px]">Active Status: Online</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payment Strip -->
+        <div class="payment-strip py-6 border-t border-white/5">
+            <div class="container mx-auto px-4 flex flex-wrap justify-center gap-8 opacity-40 grayscale hover:grayscale-0 transition duration-500">
+                <span class="text-xs font-bold tracking-widest">BITCOIN</span>
+                <span class="text-xs font-bold tracking-widest">ETHEREUM</span>
+                <span class="text-xs font-bold tracking-widest">LITECOIN</span>
+                <span class="text-xs font-bold tracking-widest">PAYEER</span>
+                <span class="text-xs font-bold tracking-widest">PERFECT MONEY</span>
+                <span class="text-xs font-bold tracking-widest">TRON</span>
+            </div>
+        </div>
+
+        <!-- Bottom Copyright -->
+        <div class="bg-black py-4">
+            <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-[10px] text-blue-200/30 uppercase font-bold tracking-widest">
+                <p>&copy; 2024 Falcon Fly Capital LTD. All Rights Reserved.</p>
+                <div class="flex space-x-6 mt-2 md:mt-0">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+       <script>
+        const slides = document.querySelectorAll('.hero-slide');
+        let current = 0;
+        function nextSlide() {
+            slides[current].classList.replace('opacity-100', 'opacity-0');
+            current = (current + 1) % slides.length;
+            slides[current].classList.replace('opacity-0', 'opacity-100');
+        }
+        setInterval(nextSlide, 5000);
+    </script>
+
+
+</body>
+</html>
