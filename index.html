@@ -11,79 +11,119 @@
         .gradient-bg { background: linear-gradient(135deg, #001a33 0%, #003366 100%); }
         .card-blue { background-color: #002b4e; }
         .dark-footer { background-color: #001529; }
+        
+        /* Hero background that covers header too */
+        .hero-container {
+            position: relative;
+            min-height: 100vh;
+        }
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+        }
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: cover;
+            background-position: center;
+            transition: opacity 1s ease-in-out;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0, 26, 51, 0.7) 0%, rgba(0, 51, 102, 0.85) 100%);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
     </style>
 </head>
 <body class="bg-slate-100 text-white">
 
-    <!-- Header Section -->
-    <header class="bg-white text-slate-800">
-        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
-            <!-- Logo -->
-            <div class="flex items-center space-x-2 mb-4 md:mb-0">
-                <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+    <!-- Hero Container with Background -->
+    <div class="hero-container">
+        <!-- Background Slideshow -->
+        <div class="hero-background">
+            <div class="hero-slide opacity-100" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070');"></div>
+            <div class="hero-slide opacity-0" style="background-image: url('https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=2070');"></div>
+            <div class="hero-slide opacity-0" style="background-image: url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=2070');"></div>
+        </div>
+        
+        <!-- Overlay -->
+        <div class="hero-overlay"></div>
+
+        <!-- Header Section -->
+        <header class="hero-content">
+            <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                        <img src="images/falcon_logo_2-removebg-preview.png" alt="">
+                        <!-- <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg> -->
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold leading-none text-white">FALCON FLY</h1>
+                        <p class="text-sm font-semibold tracking-widest text-blue-300">CAPITAL</p>
+                    </div>
                 </div>
-                <div>
-                    <h1 class="text-xl font-bold leading-none text-blue-900">FALCON FLY</h1>
-                    <p class="text-sm font-semibold tracking-widest text-blue-700">CAPITAL</p>
+
+                <!-- Top Actions -->
+                <div class="flex flex-wrap gap-2">
+                    <!-- <button class="bg-blue-900 text-white text-xs px-4 py-2 rounded flex items-center uppercase font-bold hover:bg-blue-800 transition">
+                        Profit Calculator <span class="ml-2">+-/=</span>
+                    </button> -->
+                    <button class="bg-green-600 text-white text-xs px-4 py-2 rounded flex items-center uppercase font-bold hover:bg-green-500 transition">
+                        <a href="accoun-registration.html">Registration Account</a>
+                    </button>
+                    <button class="bg-green-700 text-white text-xs px-4 py-2 rounded flex items-center uppercase font-bold hover:bg-green-600 transition">
+                        <a href="login.html">Log In To Your Account</a>
+                    </button>
                 </div>
             </div>
 
-            <!-- Top Actions -->
-            <div class="flex flex-wrap gap-2">
-                <button class="bg-blue-900 text-white text-xs px-4 py-2 rounded flex items-center uppercase font-bold">
-                    Profit Calculator <span class="ml-2">+-/=</span>
-                </button>
-                <button class="bg-green-600 text-white text-xs px-4 py-2 rounded flex items-center uppercase font-bold">
-                    <a href="accoun-registration.html">
-                    Registration Account
-                    </a>
-                </button>
-                <button class="bg-green-700 text-white text-xs px-4 py-2 rounded flex items-center uppercase font-bold">
-                    <a href="login.html">
-                    Log In To Your Account
-                    </a>
-                </button>
-            </div>
-        </div>
-
-        <!-- Navigation Bar -->
-        <nav class="bg-slate-50 border-t border-b border-gray-200">
-            <div class="container mx-auto px-4">
-                <ul class="flex flex-wrap justify-start py-3 text-[10px] md:text-xs font-bold uppercase text-gray-500 space-x-6">
-                    <li class="flex items-center hover:text-blue-600 cursor-pointer"><span class="mr-1">🏠</span> Home Page</li>
-                    <li class="flex items-center hover:text-blue-600 cursor-pointer"><span class="mr-1">📰</span> News Company</li>
-                    <li class="flex items-center hover:text-blue-600 cursor-pointer"><span class="mr-1">❓</span> FAQ Help</li>
-                    <li class="flex items-center hover:text-blue-600 cursor-pointer"><span class="mr-1">📜</span> Rules Conditions</li>
-                    <li class="flex items-center hover:text-blue-600 cursor-pointer"><span class="mr-1">📞</span> Contact Us Support</li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="relative h-[450px] overflow-hidden">
-        <div id="slideshow" class="absolute inset-0">
-            <div class="hero-slide absolute inset-0 opacity-100 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070');"></div>
-            <div class="hero-slide absolute inset-0 opacity-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=2070');"></div>
-            <div class="hero-slide absolute inset-0 opacity-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=2070');"></div>
-        </div>
-        <div class="absolute inset-0 bg-blue-900/80 flex items-center">
-            <div class="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2">
-                <div class="z-10 text-center lg:text-left">
-                    <h2 class="text-4xl lg:text-6xl font-bold mb-6">Trade with <br><span class="text-green-400">specialists!</span></h2>
-                    <p class="text-sm lg:text-base text-blue-100 max-w-lg mb-8">Financial independence is one of the main aspirations of every modern person. Our team has developed an advanced package of solutions.</p>
-                    <button class="bg-green-500 px-8 py-3 rounded text-sm font-bold uppercase tracking-widest hover:bg-green-400 transition">Invest Now</button>
+            <!-- Navigation Bar -->
+            <nav class="bg-white/10 backdrop-blur-md border-t border-b border-white/20">
+                <div class="container mx-auto px-4">
+                    <ul class="flex flex-wrap justify-start py-3 text-[10px] md:text-xs font-bold uppercase text-white/80 space-x-6">
+                        <li class="flex items-center hover:text-white cursor-pointer transition"><span class="mr-1">🏠</span><a href="index.html"> Home Page</a></li>
+                        <li class="flex items-center hover:text-white cursor-pointer transition"><span class="mr-1">📰</span><a href="news.html"> News Company</a></li>
+                        <li class="flex items-center hover:text-white cursor-pointer transition"><span class="mr-1">❓</span><a href="faq.html"> FAQ Help</a></li>
+                        <li class="flex items-center hover:text-white cursor-pointer transition"><span class="mr-1">📜</span><a href="rules&cond.html"> Rules Conditions</a></li>
+                        <li class="flex items-center hover:text-white cursor-pointer transition"><span class="mr-1">📞</span><a href="contact.html"> Contact Us Support</a></li>
+                    </ul>
                 </div>
-                <div class="hidden lg:flex justify-end relative">
-                   <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=687" class="h-[400px] object-contain" alt="Specialist">
+            </nav>
+
+            <!-- Hero Content -->
+            <div class="container mx-auto px-4 py-24 lg:py-32">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="text-center lg:text-left">
+                        <h2 class="text-4xl lg:text-6xl font-bold mb-6">Trade with <br><span class="text-green-400">specialists!</span></h2>
+                        <p class="text-sm lg:text-base text-blue-100 max-w-lg mb-8 mx-auto lg:mx-0">Financial independence is one of the main aspirations of every modern person. Our team has developed an advanced package of solutions.</p>
+                        <button class="bg-green-500 px-8 py-3 rounded text-sm font-bold uppercase tracking-widest hover:bg-green-400 transition shadow-lg">Invest Now</button>
+                    </div>
+                    <div class="hidden lg:flex justify-end">
+                       <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=687" class="h-[400px] object-contain drop-shadow-2xl" alt="Specialist">
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </header>
+    </div>
 
     <!-- Investment Plans -->
-    <section class="gradient-bg py-12">
+    <section id="investment-plan" class="gradient-bg py-12">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
                 
@@ -115,7 +155,6 @@
                     <div class="w-full p-2 text-center text-[9px] font-bold uppercase tracking-wider bg-blue-950">Principal: Include</div>
                 </div>
 
-                <!-- (Repeated for other plans with slight variation...) -->
                 <!-- Plan 2: Standard -->
                 <div class="bg-blue-900/40 border border-blue-400/30 rounded flex flex-col items-center overflow-hidden">
                     <div class="p-6 text-center w-full">
@@ -216,7 +255,7 @@
 
             <!-- Right Side: Text -->
             <div>
-                <h3 class="text-2xl font-bold mb-4">About Us</h3>
+                <h3 id="aboutUs" class="text-2xl font-bold mb-4">About Us</h3>
                 <div class="text-sm space-y-4 text-slate-300 leading-relaxed">
                     <p>falconflycapital.com - this is an association of people in an investment pool, which is managed by an experienced team of traders. By joining us you will receive a guaranteed profit, without risks and delays.</p>
                     <p>We are experts in quick and cost-effective finance management, we major on stock and bond investment management with professional market analysis. We scout and offer real estate investments with high futuristic returns. We also major on e-currency professional trading on the Forex and Crypto market.</p>
@@ -243,13 +282,28 @@
                     <div class="w-12 h-12 text-blue-300 mb-2"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg></div>
                     <span class="text-[10px] uppercase font-bold">SSL Encryption</span>
                 </div>
-                <!-- ... other advantage icons ... -->
+                <div class="flex flex-col items-center">
+                    <div class="w-12 h-12 text-blue-300 mb-2"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+                    <span class="text-[10px] uppercase font-bold">Instant Payout</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-12 h-12 text-blue-300 mb-2"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></div>
+                    <span class="text-[10px] uppercase font-bold">24/7 Support</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-12 h-12 text-blue-300 mb-2"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg></div>
+                    <span class="text-[10px] uppercase font-bold">Multiple Payment</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-12 h-12 text-blue-300 mb-2"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+                    <span class="text-[10px] uppercase font-bold">Verified Company</span>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Referral & Info Section -->
-    <section class="bg-[#002d5a] py-16">
+    <section id="referral" class="bg-[#002d5a] py-16">
         <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Referral -->
             <div class="flex items-center space-x-4">
@@ -263,7 +317,7 @@
 
             <!-- Certificate -->
             <div class="bg-white/5 p-4 rounded flex items-center justify-center">
-                <img src="https://via.placeholder.com/150x200?text=CERTIFICATE" alt="Certificate" class="h-48 border border-white/20">
+                <img src="images/cert.jpeg" alt="Certificate" class="h-48 border border-white/20">
             </div>
 
             <!-- Company Details -->
@@ -294,7 +348,7 @@
                 </div>
                 <div>
                     <span class="text-blue-400 block text-[10px] uppercase">Total Accounts</span>
-                    <span class="font-bold text-lg">4</span>
+                    <span class="font-bold text-lg">95</span>
                 </div>
             </div>
 
@@ -315,8 +369,9 @@
             <!-- Col 1: Brand -->
             <div class="space-y-6">
                 <div class="flex items-center space-x-2">
-                    <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center">
-                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-width="2"></path></svg>
+                    <div class="w-8 h-8 bg-white rounded flex items-center justify-center">
+                        <img src="images/falcon_logo_2-removebg-preview.png" alt="">
+                        <!-- <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-width="2"></path></svg> -->
                     </div>
                     <span class="text-lg font-bold">FALCON FLY CAPITAL</span>
                 </div>
@@ -334,11 +389,11 @@
             <div>
                 <h4 class="text-sm font-bold uppercase mb-6 tracking-widest text-green-400">Quick Links</h4>
                 <ul class="text-xs space-y-4 text-blue-100/70">
-                    <li><a href="#" class="hover:text-green-400 transition">Investment Plans</a></li>
-                    <li><a href="#" class="hover:text-green-400 transition">About Company</a></li>
+                    <li><a href="#investment-plan" class="hover:text-green-400 transition">Investment Plans</a></li>
+                    <li><a href="#aboutUs" class="hover:text-green-400 transition">About Company</a></li>
                     <li><a href="#" class="hover:text-green-400 transition">Anti-Spam Policy</a></li>
-                    <li><a href="#" class="hover:text-green-400 transition">Terms of Service</a></li>
-                    <li><a href="#" class="hover:text-green-400 transition">Affiliate Program</a></li>
+                    <li><a href="rules&cond.html" class="hover:text-green-400 transition">Terms of Service</a></li>
+                    <li><a href="#referral" class="hover:text-green-400 transition">Affiliate Program</a></li>
                 </ul>
             </div>
 
@@ -346,10 +401,10 @@
             <div>
                 <h4 class="text-sm font-bold uppercase mb-6 tracking-widest text-green-400">Support</h4>
                 <ul class="text-xs space-y-4 text-blue-100/70">
-                    <li><a href="#" class="hover:text-green-400 transition">Help Center / FAQ</a></li>
+                    <li><a href="contact.html" class="hover:text-green-400 transition">Help Center / FAQ</a></li>
                     <li><a href="#" class="hover:text-green-400 transition">Live Chat Support</a></li>
-                    <li><a href="#" class="hover:text-green-400 transition">Contact Representative</a></li>
-                    <li><a href="#" class="hover:text-green-400 transition">Submit a Ticket</a></li>
+                    <li><a href="contact.html" class="hover:text-green-400 transition">Contact Representative</a></li>
+                    <li><a href="contact.html" class="hover:text-green-400 transition">Submit a Ticket</a></li>
                 </ul>
             </div>
 
@@ -392,7 +447,7 @@
         </div>
     </footer>
 
-       <script>
+    <script>
         const slides = document.querySelectorAll('.hero-slide');
         let current = 0;
         function nextSlide() {
@@ -402,7 +457,6 @@
         }
         setInterval(nextSlide, 5000);
     </script>
-
 
 </body>
 </html>

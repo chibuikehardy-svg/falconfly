@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falcon Fly Capital - Company News</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #001a33 0%, #003366 100%); }
+        
+        .news-card {
+            transition: all 0.3s ease;
+        }
+        .news-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .filter-btn {
+            transition: all 0.3s ease;
+        }
+        .filter-btn.active {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            transform: scale(1.05);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .badge-pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-white">
+
+    <!-- Header (Consistent with Home) -->
+    <header class="relative z-10">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center space-x-2 mb-4 md:mb-0 cursor-pointer" onclick="window.location.href='index.html'">
+                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                    <img src="images/falcon_logo_2-removebg-preview.png" alt="Logo">
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold leading-none text-white">FALCON FLY</h1>
+                    <p class="text-sm font-semibold tracking-widest text-blue-300">CAPITAL</p>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap gap-2">
+                <button class="bg-green-600 text-white text-xs px-4 py-2 rounded uppercase font-bold hover:bg-green-500 transition">
+                    <a href="accoun-registration.html">Registration Account</a>
+                </button>
+                <button class="bg-green-700 text-white text-xs px-4 py-2 rounded uppercase font-bold hover:bg-green-600 transition">
+                    <a href="login.html">Log In</a>
+                </button>
+            </div>
+        </div>
+
+        <nav class="bg-white/5 backdrop-blur-md border-t border-b border-white/10">
+            <div class="container mx-auto px-4">
+                <ul class="flex flex-wrap justify-start py-3 text-[10px] md:text-xs font-bold uppercase text-white/80 space-x-6">
+                    <li class="hover:text-white cursor-pointer transition"><a href="index.html">🏠 Home Page</a></li>
+                    <li class="text-green-400"><a href="news.html">📰 News</a></li>
+                    <li class="hover:text-white cursor-pointer transition"><a href="faq.html">❓ FAQ</a></li>
+                    <li class="hover:text-white cursor-pointer transition"><a href="rules&cond.html">📜 Rules Conditions</a></li>
+                    <li class="hover:text-white cursor-pointer transition"><a href="contact.html">📞 Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Header Section -->
+    <header class="gradient-bg py-20 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 w-64 h-64 bg-blue-500 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-green-500 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="inline-block bg-green-500/20 border border-green-500/30 rounded-full px-6 py-2 mb-6">
+                    <span class="text-green-400 text-sm font-bold uppercase tracking-widest">📰 Company Updates</span>
+                </div>
+                <h1 class="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+                    Latest <span class="text-green-400">News</span><br>& Updates
+                </h1>
+                <p class="text-lg text-blue-200 max-w-2xl mx-auto">
+                    Stay informed with the latest developments, market insights, and company announcements from Falcon Fly Capital.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Filter Section -->
+    <section class="bg-slate-800 py-8 sticky top-0 z-40 border-b border-slate-700">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-3" id="filterButtons">
+                <button class="filter-btn active bg-slate-700 hover:bg-slate-600 px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider" data-category="all">
+                    All News
+                </button>
+                <button class="filter-btn bg-slate-700 hover:bg-slate-600 px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider" data-category="market">
+                    Market Analysis
+                </button>
+                <button class="filter-btn bg-slate-700 hover:bg-slate-600 px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider" data-category="company">
+                    Company News
+                </button>
+                <button class="filter-btn bg-slate-700 hover:bg-slate-600 px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider" data-category="crypto">
+                    Cryptocurrency
+                </button>
+                <button class="filter-btn bg-slate-700 hover:bg-slate-600 px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider" data-category="investment">
+                    Investment Tips
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured News Section -->
+    <section class="bg-slate-900 py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex items-center gap-3 mb-8">
+                    <div class="w-1 h-8 bg-green-500"></div>
+                    <h2 class="text-3xl font-bold uppercase tracking-wider">Featured Story</h2>
+                    <span class="badge-pulse bg-red-500 text-white text-xs px-3 py-1 rounded-full font-bold">BREAKING</span>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl overflow-hidden border border-slate-700 news-card">
+                    <div class="relative h-80 lg:h-auto">
+                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800" alt="Featured" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-green-500 text-white px-4 py-2 rounded-full text-xs font-bold uppercase">
+                            Market Analysis
+                        </div>
+                    </div>
+                    <div class="p-8 lg:p-12 flex flex-col justify-center">
+                        <div class="text-sm text-blue-400 mb-3 font-semibold">January 13, 2026 • 5 min read</div>
+                        <h3 class="text-3xl lg:text-4xl font-bold mb-4 leading-tight">Record-Breaking Q4 2025: Falcon Fly Achieves 180% Growth</h3>
+                        <p class="text-slate-300 mb-6 leading-relaxed">
+                            In an unprecedented milestone, Falcon Fly Capital has reported exceptional performance in Q4 2025, with client portfolios averaging 180% returns across diversified investment strategies.
+                        </p>
+                        <button class="bg-green-600 hover:bg-green-500 text-white px-8 py-3 rounded-lg font-bold uppercase tracking-wider transition self-start">
+                            Read Full Story →
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Grid Section -->
+    <section class="bg-slate-900 py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div id="newsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- News cards will be inserted here by JavaScript -->
+                </div>
+                
+                <!-- Load More Button -->
+                <div class="text-center mt-12">
+                    <button id="loadMoreBtn" class="bg-slate-800 hover:bg-slate-700 border-2 border-slate-600 hover:border-green-500 text-white px-12 py-4 rounded-lg font-bold uppercase tracking-wider transition">
+                        Load More Articles
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="gradient-bg py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="bg-white/5 backdrop-blur-lg rounded-2xl p-12 border border-white/10">
+                    <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-4">Subscribe to Our Newsletter</h3>
+                    <p class="text-blue-200 mb-8">Get the latest market insights, investment tips, and company updates delivered directly to your inbox.</p>
+                    <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                        <input type="email" placeholder="Enter your email address" class="flex-1 px-6 py-4 rounded-lg bg-white/10 border border-white/20 text-white placeholder-blue-300 focus:outline-none focus:border-green-500 transition">
+                        <button type="submit" class="bg-green-600 hover:bg-green-500 px-8 py-4 rounded-lg font-bold uppercase tracking-wider transition whitespace-nowrap">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="dark-footer pt-16">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            <!-- Col 1: Brand -->
+            <div class="space-y-6">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-white rounded flex items-center justify-center">
+                        <img src="images/falcon_logo_2-removebg-preview.png" alt="">
+                        <!-- <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-width="2"></path></svg> -->
+                    </div>
+                    <span class="text-lg font-bold">FALCON FLY CAPITAL</span>
+                </div>
+                <p class="text-xs text-blue-200/60 leading-relaxed">
+                    We provide a world-class investment platform for individuals and corporate organizations to grow their wealth through professional market trading.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-blue-600 transition">f</a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-blue-400 transition">t</a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-red-600 transition">y</a>
+                </div>
+            </div>
+
+            <!-- Col 2: Useful Links -->
+            <div>
+                <h4 class="text-sm font-bold uppercase mb-6 tracking-widest text-green-400">Quick Links</h4>
+                <ul class="text-xs space-y-4 text-blue-100/70">
+                    <li><a href="#investment-plan" class="hover:text-green-400 transition">Investment Plans</a></li>
+                    <li><a href="#aboutUs" class="hover:text-green-400 transition">About Company</a></li>
+                    <li><a href="#" class="hover:text-green-400 transition">Anti-Spam Policy</a></li>
+                    <li><a href="rules&cond.html" class="hover:text-green-400 transition">Terms of Service</a></li>
+                    <li><a href="#referral" class="hover:text-green-400 transition">Affiliate Program</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 3: Support -->
+            <div>
+                <h4 class="text-sm font-bold uppercase mb-6 tracking-widest text-green-400">Support</h4>
+                <ul class="text-xs space-y-4 text-blue-100/70">
+                    <li><a href="#" class="hover:text-green-400 transition">Help Center / FAQ</a></li>
+                    <li><a href="#" class="hover:text-green-400 transition">Live Chat Support</a></li>
+                    <li><a href="#" class="hover:text-green-400 transition">Contact Representative</a></li>
+                    <li><a href="#" class="hover:text-green-400 transition">Submit a Ticket</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 4: Contact -->
+            <div>
+                <h4 class="text-sm font-bold uppercase mb-6 tracking-widest text-green-400">Office Info</h4>
+                <div class="text-xs space-y-4 text-blue-100/70">
+                    <p class="flex items-start"><span class="mr-2">📍</span> 460 E German Conway, Arkansas 72032, USA</p>
+                    <p class="flex items-center"><span class="mr-2">📞</span> +1 305 482 3859</p>
+                    <p class="flex items-center"><span class="mr-2">✉️</span> support@falconflycapital.com</p>
+                    <div class="pt-4">
+                        <span class="inline-block bg-green-500/10 text-green-400 border border-green-500/20 px-3 py-1 rounded-full text-[10px]">Active Status: Online</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payment Strip -->
+        <div class="payment-strip py-6 border-t border-white/5">
+            <div class="container mx-auto px-4 flex flex-wrap justify-center gap-8 opacity-40 grayscale hover:grayscale-0 transition duration-500">
+                <span class="text-xs font-bold tracking-widest">BITCOIN</span>
+                <span class="text-xs font-bold tracking-widest">ETHEREUM</span>
+                <span class="text-xs font-bold tracking-widest">LITECOIN</span>
+                <span class="text-xs font-bold tracking-widest">PAYEER</span>
+                <span class="text-xs font-bold tracking-widest">PERFECT MONEY</span>
+                <span class="text-xs font-bold tracking-widest">TRON</span>
+            </div>
+        </div>
+
+        <!-- Bottom Copyright -->
+        <div class="bg-black py-4">
+            <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-[10px] text-blue-200/30 uppercase font-bold tracking-widest">
+                <p>&copy; 2024 Falcon Fly Capital LTD. All Rights Reserved.</p>
+                <div class="flex space-x-6 mt-2 md:mt-0">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // News data
+        const newsData = [
+            {
+                id: 1,
+                category: 'market',
+                title: 'Global Markets Show Strong Momentum in 2026',
+                excerpt: 'International markets continue their upward trajectory as investors show renewed confidence in economic recovery.',
+                image: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=600',
+                date: 'January 12, 2026',
+                readTime: '4 min read'
+            },
+            {
+                id: 2,
+                category: 'crypto',
+                title: 'Bitcoin Reaches New All-Time High',
+                excerpt: 'Cryptocurrency markets surge as Bitcoin breaks through $85,000 barrier, setting new records.',
+                image: 'https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=600',
+                date: 'January 11, 2026',
+                readTime: '3 min read'
+            },
+            {
+                id: 3,
+                category: 'company',
+                title: 'Falcon Fly Expands to Asian Markets',
+                excerpt: 'Strategic expansion into Singapore and Hong Kong markets marks significant growth milestone.',
+                image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600',
+                date: 'January 10, 2026',
+                readTime: '5 min read'
+            },
+            {
+                id: 4,
+                category: 'investment',
+                title: 'Top 5 Investment Strategies for 2026',
+                excerpt: 'Expert analysis reveals the most promising investment opportunities for the coming year.',
+                image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600',
+                date: 'January 9, 2026',
+                readTime: '6 min read'
+            },
+            {
+                id: 5,
+                category: 'market',
+                title: 'Real Estate Market Shows Resilience',
+                excerpt: 'Property investments continue to deliver stable returns despite economic uncertainties.',
+                image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600',
+                date: 'January 8, 2026',
+                readTime: '4 min read'
+            },
+            {
+                id: 6,
+                category: 'crypto',
+                title: 'Ethereum 3.0 Update Released',
+                excerpt: 'Major protocol upgrade promises faster transactions and lower fees for users.',
+                image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=600',
+                date: 'January 7, 2026',
+                readTime: '3 min read'
+            },
+            {
+                id: 7,
+                category: 'company',
+                title: 'Client Success Stories: 200% Returns',
+                excerpt: 'Meet the investors who achieved exceptional returns through our diversified strategies.',
+                image: 'https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=600',
+                date: 'January 6, 2026',
+                readTime: '5 min read'
+            },
+            {
+                id: 8,
+                category: 'investment',
+                title: 'Sustainable Investing Gains Momentum',
+                excerpt: 'ESG-focused portfolios outperform traditional investments as demand surges.',
+                image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600',
+                date: 'January 5, 2026',
+                readTime: '4 min read'
+            },
+            {
+                id: 9,
+                category: 'market',
+                title: 'Tech Sector Leads Market Rally',
+                excerpt: 'Technology stocks drive impressive gains across major indices worldwide.',
+                image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600',
+                date: 'January 4, 2026',
+                readTime: '3 min read'
+            }
+        ];
+
+        let displayedNews = 6;
+        let currentFilter = 'all';
+
+        // Render news cards
+        function renderNews(filterCategory = 'all') {
+            const newsGrid = document.getElementById('newsGrid');
+            const filteredNews = filterCategory === 'all' 
+                ? newsData 
+                : newsData.filter(news => news.category === filterCategory);
+            
+            const newsToShow = filteredNews.slice(0, displayedNews);
+            
+            newsGrid.innerHTML = newsToShow.map(news => `
+                <div class="news-card fade-in bg-slate-800 rounded-xl overflow-hidden border border-slate-700 hover:border-green-500 transition" data-category="${news.category}">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="${news.image}" alt="${news.title}" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute top-3 right-3 bg-slate-900/80 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-bold uppercase">
+                            ${news.category}
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-xs text-blue-400 mb-3 font-semibold">${news.date} • ${news.readTime}</div>
+                        <h3 class="text-xl font-bold mb-3 leading-tight hover:text-green-400 transition">${news.title}</h3>
+                        <p class="text-slate-400 text-sm mb-4 leading-relaxed">${news.excerpt}</p>
+                        <button class="text-green-400 hover:text-green-300 font-bold text-sm uppercase tracking-wider transition flex items-center gap-2">
+                            Read More 
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+
+            // Hide load more button if all news is displayed
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            if (displayedNews >= filteredNews.length) {
+                loadMoreBtn.style.display = 'none';
+            } else {
+                loadMoreBtn.style.display = 'inline-block';
+            }
+        }
+
+        // Filter buttons functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                currentFilter = btn.dataset.category;
+                displayedNews = 6;
+                renderNews(currentFilter);
+            });
+        });
+
+        // Load more functionality
+        document.getElementById('loadMoreBtn').addEventListener('click', () => {
+            displayedNews += 3;
+            renderNews(currentFilter);
+        });
+
+        // Initial render
+        renderNews();
+    </script>
+
+</body>
+</html>
